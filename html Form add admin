@@ -1,0 +1,42 @@
+<?php $main = new main;  ?>
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header text-primary"><i class="fa fa-plus fa-primary"></i>&nbsp;&nbsp;
+            Add <small>Admin</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active">
+                <i class="fa fa-dashboard"></i> <a href="">Dashboard</a> &nbsp; ||&nbsp; <i class="fa fa-plus"></i>&nbsp;Add Admin
+            </li>
+        </ol>
+    </div>
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-md-5">
+        <form id="TestCategoryForm" enctype="multipart/form-data" method="post">
+            <div id="msg" class="bg bg-danger" style="display:none;"></div>
+        	<div id="succ" class="bg bg-success" style="display:none;"></div>
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <label for="username"><span class="text-danger">*</span>Username</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" id="username"/>
+                </div>    
+            </div>
+            
+             <div class="col-xs-12 col-sm-12 col-lg-12">
+                <label for="username"><span class="text-danger">*</span>Password</label>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="password"/>
+                </div>    
+            </div>
+            
+            
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <button type="button" class="btn btn-info btn-block" id="adminBtn" onclick="addAdmin()" name="add"><i class="fa fa-plus"></i>&nbsp; Add</button>    
+            </div>
+        </form>
+    </div>
+</div>
