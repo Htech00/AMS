@@ -1,0 +1,25 @@
+function addAdmin(){
+	var username = $('#username').val();
+	var password = $('#password').val();
+	if(username=="" || password==""){
+		err2('<i class="fa fa-warning"></i>&nbsp; Required field(s) Empty !!!',1500);
+	} else {
+		$.ajax({
+			type: 'post',
+			url: '../Controllers/inc/addAdminValidate.php',
+			data: {'username':username,'password':password},
+			success: function(responseText) {
+				if (responseText == 0) {
+					success2('Admin'+' '+username+' '+'Added Successfully...',1500);
+					$("#adminBtn").html('<span class="fa fa-repeat fa-spin"></span> &nbsp; Posting...');
+					setTimeout(function() {
+						window.location = "index.php?p=add-admin";
+					},4000);
+				} else{
+					err2('<i class="fa fa-warning"></i>&nbsp; username already exist!!!',3000);
+				}
+			}
+				
+		});
+	}
+}
