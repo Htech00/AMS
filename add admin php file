@@ -1,0 +1,19 @@
+<?php 
+require_once('../classes/main_class.php');  
+$main=new main;
+$username = $_POST['username'];
+$password = md5($_POST['password']);
+if (isset($username,$password)){
+		$sql ="Select username from admin where username = '".$username."'";
+		$sql_run = $main->query($sql);
+		$num_rows = $main->num_rows($sql_run);
+		if ($num_rows==1){
+			echo "1";
+		}else{
+			echo 0;
+			$insert="INSERT into admin (username,password) VALUES('".$username."','".$password."')";
+			$sql_run = $main->query($insert);
+		}
+}
+		
+?>
